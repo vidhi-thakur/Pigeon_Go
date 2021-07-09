@@ -1,6 +1,6 @@
 import React from 'react'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { Avatar, IconButton } from '@material-ui/core';
+import { Avatar, IconButton, Button } from '@material-ui/core';
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
 import './Sidebar.css'
@@ -18,6 +18,7 @@ function Sidebar() {
                 <SearchRoundedIcon />
                 <input className="sidebar__searchinput" placeholder="Search chats" />
             </div>
+            <Button variant="contained">START A NEW CHAT</Button>
         </div>
     )
 }
