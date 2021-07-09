@@ -1,0 +1,30 @@
+.sidebar {
+    flex-direction: column;
+}
+
+.sidebar--flex {
+    display: flex;
+}
+
+.sidebar__header {
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.sidebar__searchfield {
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.sidebar__border-b-1 {
+    border-bottom: 1px solid whitesmoke;
+}
+
+.sidebar__searchinput {
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    flex: 1;
+}
