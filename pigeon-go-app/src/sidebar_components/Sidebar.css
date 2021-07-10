@@ -35,4 +35,11 @@
 
 .sidebar__chatContainer {
     flex-direction: column;
+    overflow-y: scroll;
+}
+
+.sidebar__chatContainer::-webkit-scrollbar {
+    display: none;    /*for chrome*/
+    -ms-overflow-style: none;    /* IE and Edge */
+    scrollbar-width: none;    /* Firefox */
 }

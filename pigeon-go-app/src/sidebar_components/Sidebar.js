@@ -24,9 +24,6 @@ function Sidebar() {
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
                 <SidebarChat />
-                <SidebarChat />
-                <SidebarChat />
-                <SidebarChat />
             </div>
         </div>
     )

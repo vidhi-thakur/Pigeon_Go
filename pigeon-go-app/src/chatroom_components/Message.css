@@ -1,0 +1,22 @@
+.message {
+    background-color: var(--gray-light);
+    width: fit-content;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    position: relative;
+    margin: 1rem 0px 0px 1rem;
+}
+
+.font-s {
+    font-size: x-small;
+}
+
+.m-l {
+    margin-inline-start: 0.5rem;
+}
+
+.message__userName {
+    position: absolute;
+    top: -12px;
+    font-weight: bold;
+}

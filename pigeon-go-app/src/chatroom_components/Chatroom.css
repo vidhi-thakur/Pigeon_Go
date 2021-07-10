@@ -9,3 +9,38 @@
     background-color: var(--primary-color01);
     padding: 0.5rem;
 }
+
+.chatroom__body {
+    flex: 1;
+    /* background-image: url("https://www.crushpixel.com/big-static15/preview4/hand-drawn-speech-bubbles-seamless-2133828.jpg"); */
+    background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX43898477.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chatroom__footer {
+    flex-direction: row;
+    width: 100%;
+    padding-inline-start: 1rem;
+}
+
+.costum-border {
+    border: 5px solid var(--primary-color02);
+}
+
+.chatroom__input {
+    flex: 1;
+    outline: none;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.chatroom__bg {
+    background-color: var(--primary-color02);
+}
+
+.chatroom__logo {
+    width: 100px;
+    border-radius: 0.2rem;
+}
