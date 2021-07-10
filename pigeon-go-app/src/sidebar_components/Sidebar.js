@@ -10,19 +10,19 @@ import SidebarChat from "./SidebarChat"
 function Sidebar() {
 
     return (
-        <div className="sidebar sidebar--flex">
-            <div className="sidebar__header sidebar--flex sidebar__border-b-1">
+        <div className="sidebar -flex">
+            <div className="sidebar__header -flex sidebar__border-b-1">
                 <Avatar />
                 <IconButton>
                     <MoreVertIcon />
                 </IconButton>
             </div>
-            <div className="sidebar__searchfield sidebar--flex sidebar__border-b-1">
-                <SearchRoundedIcon />
+            <div className="sidebar__searchfield -flex sidebar__border-b-1">
+                <SearchRoundedIcon style={{color: "var(--gray-dark)"}} />
                 <input className="sidebar__searchinput" placeholder="Search chats" />
             </div>
             <ButtonModal />
-            <div className="sidebar__chatContainer sidebar--flex">
+            <div className="sidebar__chatContainer -flex">
                 <SidebarChat />
                 <SidebarChat />
                 <SidebarChat />

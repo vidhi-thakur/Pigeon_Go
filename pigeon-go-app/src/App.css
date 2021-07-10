@@ -3,6 +3,9 @@
     --primary-color02: #60A5FA;
     --bg-color01: whitesmoke;
     --bg-color02: white;
+    --gray-dark: #4B5563;
+    --gray-medium: #9CA3AF;
+    --gray-light: #E5E7EB;
 }
 
 .app {

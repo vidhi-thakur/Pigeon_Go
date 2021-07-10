@@ -1,0 +1,11 @@
+.chatroom {
+    flex: 0.65;
+    flex-direction: column;
+}
+
+.chatroom__header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color01);
+    padding: 0.5rem;
+}
