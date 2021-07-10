@@ -2,14 +2,10 @@ export const initialState = {
     user: null
 }
 
-export const ACTION = {
-    SET_USER: "SET_USER",
-}
-
 const reducer = (state, action) => {
-    console.log(action.user)
+    console.log("Let us see user action",action.user)
     switch (action) {
-        case ACTION.SET_USER:
+        case "SET_USER":
             return {
                 ...state,
                 user: action.user

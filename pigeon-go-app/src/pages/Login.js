@@ -2,7 +2,6 @@ import React from 'react'
 import "./Login.css"
 import { Button } from '@material-ui/core';
 import logo from "../images/logo.jpg"
-import { ACTION } from "../reducer"
 import { auth, provider } from "../firebase"
 import { useStateValue } from "../StateProvider"
 
@@ -15,7 +14,7 @@ function Login() {
             // console.log("Let us check user inside result",result.user.displayName)
 
             dispatch({
-                type: ACTION.SET_USER,
+                type: "SET_USER",
                 user: result.user
             }).catch(e => alert(e))
             
