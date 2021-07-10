@@ -11,19 +11,16 @@ function ButtonModal() {
     const handleShow = () => setShow(true);
     return (
         <div className="buttonmodal">
-            <Button variant="contained" onClick={handleShow}>START A NEW CHAT</Button>
+            <Button className="buttonmodal__button" variant="contained" onClick={handleShow}>START A NEW CHAT</Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>ENTER CHAT</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body><input className="buttonmodal__input" placeholder="Enter chat subject here..." /></Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button className="buttonmodal__bottomButton" variant="secondary" onClick={handleClose}>
                         Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>

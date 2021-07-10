@@ -33,10 +33,6 @@
     flex: 1;
 }
 
-.MuiButtonBase-root {
-    background-color: var(--bg-color01)!important;
-}
-
 .sidebar__chatContainer {
     flex-direction: column;
 }

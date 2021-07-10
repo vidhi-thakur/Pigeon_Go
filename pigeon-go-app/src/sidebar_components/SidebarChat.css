@@ -8,3 +8,11 @@
 .sidebarchat__info {
     margin-inline-start: 1rem;
 }
+
+.mb-0 {
+    margin-bottom: 0px;
+}
+
+.sidebarchat__chatRoom {
+    font-weight: bold;
+}
