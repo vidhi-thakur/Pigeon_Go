@@ -17,7 +17,12 @@ function ButtonModal() {
                 <Modal.Header closeButton>
                     <Modal.Title>ENTER CHAT</Modal.Title>
                 </Modal.Header>
-                <Modal.Body><input className="buttonmodal__input" placeholder="Enter chat subject here..." /></Modal.Body>
+                <Modal.Body>
+                    <form>
+                        <input className="buttonmodal__input" placeholder="Enter chat subject here..." />
+                        <button style={{display: "none"}} type="submit" onClick={(e) => e.preventDefault()}>Invisible</button>
+                    </form>
+                </Modal.Body>
                 <Modal.Footer>
                     <Button className="buttonmodal__bottomButton" variant="secondary" onClick={handleClose}>
                         Close

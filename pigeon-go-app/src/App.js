@@ -1,17 +1,22 @@
 import './App.css';
 import Sidebar from "./sidebar_components/Sidebar"
 import Chatroom from "./chatroom_components/Chatroom"
-
-import "react-bootstrap/dist/react-bootstrap.min.js";
+import Login from './pages/Login';
+import { useStateValue } from "./StateProvider"
 
 function App() {
+  const [{user}] = useStateValue()
+  // const user=false
+
   return (
-    <div className="app">
-      <div className="app__container">
-        <Sidebar />
-        <Chatroom />
-     </div>
-    </div>
+    <>
+      {user ? (<div className="app">
+        <div className="app__container">
+          <Sidebar />
+          <Chatroom />
+        </div>
+      </div>) : (<Login />)}
+    </>
   );
 }
 

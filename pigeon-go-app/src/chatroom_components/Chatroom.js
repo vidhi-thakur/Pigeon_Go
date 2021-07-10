@@ -26,7 +26,7 @@ function Chatroom() {
             
             <form className="chatroom__footer chatroom__bg -flex">
                 <input className="chatroom__input costum-border" placeholder="Type a message..." />
-                <button className="chatroom__bg costum-border" onclick={onSubmitHandler} type="submit"><img className="chatroom__logo" src={logo} alt="Logo" /></button>
+                <button className="chatroom__bg costum-border" onClick={onSubmitHandler} type="submit"><img className="chatroom__logo" src={logo} alt="Logo" /></button>
             </form>
         </div>
     )
