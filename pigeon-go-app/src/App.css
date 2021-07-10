@@ -1,0 +1,21 @@
+:root {
+    --primary-color01: #93C5FD;
+    --primary-color02: #60A5FA;
+    --bg-color01: whitesmoke;
+    --bg-color02: white;
+}
+
+.app {
+    background-color: var(--bg-color01);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.app__container {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    background-color: var(--bg-color02);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}

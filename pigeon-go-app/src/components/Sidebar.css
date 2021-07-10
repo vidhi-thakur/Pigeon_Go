@@ -1,5 +1,7 @@
 .sidebar {
     flex-direction: column;
+    flex: 0.35;
+    border-right: 1px solid var(--bg-color01);
 }
 
 .sidebar--flex {
@@ -9,16 +11,18 @@
 .sidebar__header {
     justify-content: space-between;
     padding: 0.5rem;
+    background-color: var(--primary-color01);
 }
 
 .sidebar__searchfield {
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    background-color: var(--bg-color02);
 }
 
 .sidebar__border-b-1 {
-    border-bottom: 1px solid whitesmoke;
+    border-bottom: 1px solid var(--bg-color01);
 }
 
 .sidebar__searchinput {
@@ -27,4 +31,12 @@
     outline: none;
     font-size: 1.1rem;
     flex: 1;
+}
+
+.MuiButtonBase-root {
+    background-color: var(--bg-color01)!important;
+}
+
+.sidebar__chatContainer {
+    flex-direction: column;
 }

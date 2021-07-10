@@ -1,0 +1,10 @@
+.sidebarchat {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--bg-color01);
+}
+
+.sidebarchat__info {
+    margin-inline-start: 1rem;
+}
