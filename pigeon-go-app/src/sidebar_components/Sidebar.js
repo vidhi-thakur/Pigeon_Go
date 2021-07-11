@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Avatar, IconButton } from '@material-ui/core';
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import ButtonModal from './ButtonModal';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
-import { auth } from "../firebase"
+import db, { auth } from "../firebase"
 
 import './Sidebar.css'
 import SidebarChat from "./SidebarChat"
@@ -13,6 +13,15 @@ import SidebarChat from "./SidebarChat"
 function Sidebar() {
 
     const [darktheme, setDarktheme] = useState(false)
+    const [rooms, setRooms] = useState([])
+
+    useEffect(() => {
+        //db stuff --> here we wnat to fetch data from db and display to the user
+        db.collection("rooms").onSnapshot((snapshot) => setRooms(snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data()
+        }))))
+    }, [])
 
     const signOutHandler = () => {
         auth.signOut()
@@ -37,7 +46,8 @@ function Sidebar() {
             </div>
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
-                <SidebarChat />
+                {rooms.map((room)=> (<SidebarChat id={room.id} title={room.data.name} lastMessage="Last message" />)
+                )}
             </div>
         </div>
     )
