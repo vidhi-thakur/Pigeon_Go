@@ -21,7 +21,7 @@ function App() {
                   <Chatroom />
                 </Route>
                 <Route path="/">
-                  <Chatroom />
+                  <Chatroom firstPage />
                 </Route>
               </Switch>
             </Router>

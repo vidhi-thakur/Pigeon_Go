@@ -10,7 +10,20 @@
     padding: 0.5rem;
 }
 
+.chatroom__firstpage {
+    flex: 1;
+}
 
+.firstpage--info {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstpage--logo {
+    height: 300px;
+}
 
 .chatroom__body {
     flex: 1;
