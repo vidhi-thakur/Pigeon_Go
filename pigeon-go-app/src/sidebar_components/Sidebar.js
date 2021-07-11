@@ -17,7 +17,7 @@ function Sidebar() {
 
     useEffect(() => {
         //db stuff --> here we wnat to fetch data from db and display to the user
-        db.collection("rooms").onSnapshot((snapshot) => setRooms(snapshot.docs.map(doc => ({
+        db.collection("rooms").orderBy("timestamp", "desc").onSnapshot((snapshot) => setRooms(snapshot.docs.map(doc => ({
             id: doc.id,
             data: doc.data()
         }))))

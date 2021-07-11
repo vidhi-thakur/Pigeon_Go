@@ -3,6 +3,11 @@
     padding: 1rem;
     align-items: center;
     border-bottom: 1px solid var(--bg-color01);
+    cursor: pointer;
+}
+
+.sidebarchat:hover {
+    background-color: var(--primary-color03);
 }
 
 .sidebarchat__info {

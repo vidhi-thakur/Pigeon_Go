@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import { Button } from '@material-ui/core';
 import "./ButtonModal.css"
+import db from '../firebase';
+import firebase from "firebase"
 
 function ButtonModal() {
 
@@ -11,7 +13,14 @@ function ButtonModal() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        //db stuff --> basically we want to upload our input from user to db 
+        //db stuff --> basically we want to upload our input from user to db
+        db.collection("rooms").add({
+            name: chatroominput,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+
+        setChatroominput("")
+        handleClose()
     } 
 
     const handleClose = () => setShow(false);
