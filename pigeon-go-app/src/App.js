@@ -1,34 +1,13 @@
-import { useEffect, useMemo } from 'react';
 import './App.css';
 import Sidebar from "./sidebar_components/Sidebar"
 import Chatroom from "./chatroom_components/Chatroom"
 import Login from './pages/Login';
 import { useStateValue } from "./StateProvider"
-import { auth } from './firebase';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
 
-  const [{ user }, dispatch] = useStateValue()
-
-  // useMemo(useEffect(() => {
-  //   const userStateChange = auth.onAuthStateChanged((authUser) => {
-  //     if (authUser) {
-  //       return dispatch({
-  //         type: "SET_USER",
-  //         user: authUser
-  //       })
-  //     } else {
-  //       return dispatch({
-  //         type: "SET_USER",
-  //         user: null
-  //       })
-  //     }
-
-  //   })
-  //   return userStateChange();
-  // }), [user])
-  
+  const [{ user }] = useStateValue()
 
   return (
     <>
@@ -38,10 +17,10 @@ function App() {
             <Router>
               <Sidebar />
               <Switch>
-                <Route path="/">
+                <Route path="/rooms/:roomId">
                   <Chatroom />
                 </Route>
-                <Route path="/rooms/:roomId">
+                <Route path="/">
                   <Chatroom />
                 </Route>
               </Switch>

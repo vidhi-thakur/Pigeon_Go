@@ -9,6 +9,7 @@ import db from '../firebase';
 
 function Chatroom() {
 
+    const [messageInput, setMessageInput] = useState("")
     const [room, setRoom] = useState("")
     const { roomId } = useParams();
 
@@ -21,12 +22,13 @@ function Chatroom() {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        setMessageInput("")
     }
     return (
         <div className="chatroom -flex">
             <div className="chatroom__header -flex">
                 <div className="-flex">
-                    <Avatar />
+                    <Avatar src={roomId && `https://avatars.dicebear.com/api/avataaars/${roomId}.svg`} />
                     <div className="sidebarchat__info">
                         <h6 className="mb-0 sidebarchat__chatRoom">{room}</h6>
                         <p className="mb-0">Last active...</p>
@@ -43,7 +45,7 @@ function Chatroom() {
             </div>
 
             <form className="chatroom__footer chatroom__bg -flex">
-                <input className="chatroom__input costum-border" placeholder="Type a message..." />
+                <input value={messageInput} onChange={(e)=>setMessageInput(e.target.value)} className="chatroom__input costum-border" placeholder="Type a message..." />
                 <button className="chatroom__bg costum-border" onClick={onSubmitHandler} type="submit"><img className="chatroom__logo" src={logo} alt="Logo" /></button>
             </form>
         </div>

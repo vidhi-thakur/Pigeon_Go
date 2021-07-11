@@ -9,8 +9,11 @@ import db, { auth } from "../firebase"
 
 import './Sidebar.css'
 import SidebarChat from "./SidebarChat"
+import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
+
+    const [{user}] = useStateValue();
 
     const [darktheme, setDarktheme] = useState(false)
     const [rooms, setRooms] = useState([])
@@ -30,7 +33,7 @@ function Sidebar() {
     return (
         <div className="sidebar -flex">
             <div className="sidebar__header -flex sidebar__border-b-1">
-                <Avatar />
+                <Avatar src={user.photoURL} />
                 <div className="sidebar__icons -flex">
                     <IconButton className="sidebar__themetoggle" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
 

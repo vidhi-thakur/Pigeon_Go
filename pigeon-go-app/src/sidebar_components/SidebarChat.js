@@ -1,11 +1,12 @@
 import React from 'react'
 import "./SidebarChat.css"
-import { Avatar, Link } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
+import { Link } from "react-router-dom"
 
 function SidebarChat({ id, title, lastMessage }) {
 
     return (
-        <Link style={{textDecoration: "none", color: "black"}} to={`/rooms/${id}`}>
+        <Link to={`/rooms/${id}`} style={{textDecoration: "none", color: "black"}} >
             <div className="sidebarchat">
                 <Avatar src={`https://avatars.dicebear.com/api/avataaars/${id}.svg`} />
                 <div className="sidebarchat__info">
