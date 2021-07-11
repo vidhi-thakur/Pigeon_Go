@@ -43,3 +43,15 @@
     -ms-overflow-style: none;    /* IE and Edge */
     scrollbar-width: none;    /* Firefox */
 }
+
+._iconColor {
+    color: var(--bg-color02)
+}
+
+.sidebar__icons {
+    align-items: center;
+}
+
+.sidebar__themetoggle {
+    margin-right: 0.5rem!important;
+}

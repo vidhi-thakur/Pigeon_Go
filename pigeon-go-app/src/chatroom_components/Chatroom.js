@@ -15,7 +15,7 @@ function Chatroom() {
             <div className="chatroom__header -flex">
                 <Avatar />
                 <IconButton>
-                    <SearchRoundedIcon style={{color: "var(--gray-dark)"}} />
+                    <SearchRoundedIcon className="_iconColor" />
                 </IconButton>
             </div>
 
