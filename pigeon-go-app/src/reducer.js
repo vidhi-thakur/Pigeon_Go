@@ -3,17 +3,16 @@ export const initialState = {
 }
 
 const reducer = (state, action) => {
-    console.log("Let us see user action",action.user)
-    switch (action) {
+    console.log(action.type)
+    switch (action.type) {
         case "SET_USER":
             return {
                 ...state,
                 user: action.user
             }
-
         default:
-            return state
+            return state;
     }
 }
 
-export default reducer
+export default reducer;

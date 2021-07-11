@@ -5,9 +5,8 @@ import Login from './pages/Login';
 import { useStateValue } from "./StateProvider"
 
 function App() {
-  const [{user}] = useStateValue()
-  // const user=false
 
+  const [{user}, ] = useStateValue()
   return (
     <>
       {user ? (<div className="app">

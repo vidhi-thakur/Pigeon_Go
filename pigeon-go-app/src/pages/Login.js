@@ -7,29 +7,23 @@ import { useStateValue } from "../StateProvider"
 
 function Login() {
 
-    const [dispatch] = useStateValue()
+        const [ ,dispatch] = useStateValue()
 
-    const signInHandler = () => {
-        auth.signInWithPopup(provider).then((result) => {
-            // console.log("Let us check user inside result",result.user.displayName)
-
-            dispatch({
+        const signInHandler = () => {
+            auth.signInWithPopup(provider).then(result => {dispatch({
                 type: "SET_USER",
                 user: result.user
-            }).catch(e => alert(e))
-            
-        })
+            })})
+        }
 
-    }
-
-    return (
-        <div className="login">
-            <div className="login__container -flex">
-                <img className="login__image" src={logo} alt="logo" />
-                <Button onClick={signInHandler} className="login__button">Sign In with Google</Button>
+        return (
+            <div className="login">
+                <div className="login__container -flex">
+                    <img className="login__image" src={logo} alt="logo" />
+                    <Button onClick={signInHandler} className="login__button">Sign In with Google</Button>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
 export default Login
