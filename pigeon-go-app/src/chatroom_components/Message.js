@@ -6,7 +6,7 @@ function Message({name, timestamp, message}) {
         <div className="message">
             <span className="message__userName font-s">{name}</span>
             {message}
-            <span className="font-s m-l">{timestamp}</span>
+            <span className="font-s m-l">{new Date(timestamp?.toDate()).toUTCString}</span>
         </div>
     )
 }

@@ -49,7 +49,7 @@ function Sidebar() {
                         <IconButton className="sidebar__themetoggle" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
                     </OverlayTrigger>
                     <OverlayTrigger
-                        key="bottom"
+                        key="bottom1"
                         placement="bottom"
                         overlay={
                             <Tooltip id={`tooltip-bottom`}>
