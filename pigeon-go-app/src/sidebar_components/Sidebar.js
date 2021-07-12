@@ -61,7 +61,6 @@ function Sidebar() {
                             <ExitToAppIcon onClick={signOutHandler} className="_iconColor" />
                         </IconButton>
                     </OverlayTrigger>
-
                 </div>
 
             </div>
@@ -71,7 +70,7 @@ function Sidebar() {
             </div>
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
-                {rooms.map((room) => (<SidebarChat id={room.id} title={room.data.name} lastMessage="Last message" />)
+                {rooms.map((room) => (<SidebarChat key={room.id} id={room.id} title={room.data.name} lastMessage="Last message" />)
                 )}
             </div>
         </div>
