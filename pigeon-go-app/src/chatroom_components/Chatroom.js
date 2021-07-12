@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import db from '../firebase';
 import { useStateValue } from "../StateProvider"
 import homeLogo from "../images/homeLogo.svg"
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 function Chatroom({ firstPage }) {
 
@@ -38,16 +40,27 @@ function Chatroom({ firstPage }) {
                         <p className="mb-0">Last active...</p>
                     </div>}
                 </div>
-                <IconButton>
-                    <SearchRoundedIcon className="_iconColor" />
-                </IconButton>
+                <OverlayTrigger
+                    key="bottom"
+                    placement="bottom"
+                    overlay={
+                        <Tooltip id={`tooltip-bottom`}>
+                            Search chats
+                        </Tooltip>
+                    }
+                >
+                    <IconButton>
+                        <SearchRoundedIcon className="_iconColor" />
+                    </IconButton>
+                </OverlayTrigger>
+
             </div>
 
-            <div className={firstPage?"chatroom__firstpage":"chatroom__body"}>
+            <div className={firstPage ? "chatroom__firstpage" : "chatroom__body"}>
                 {!firstPage ? (<div>
                     <Message name="VidhiThakur" message="First message" timestamp="3:50" />
                     <Message name="Simi" message="Second message" timestamp="3:52" />
-                </div>):(
+                </div>) : (
                     <div className="firstpage--info -flex">
                         <img className="firstpage--logo" src={homeLogo} alt="welcome logo" />
                         <h1>Welcome!</h1>

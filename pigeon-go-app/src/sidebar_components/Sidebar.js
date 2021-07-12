@@ -6,6 +6,8 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import db, { auth } from "../firebase"
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 import './Sidebar.css'
 import SidebarChat from "./SidebarChat"
@@ -13,7 +15,7 @@ import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
 
-    const [{user}] = useStateValue();
+    const [{ user }] = useStateValue();
 
     const [darktheme, setDarktheme] = useState(false)
     const [rooms, setRooms] = useState([])
@@ -35,11 +37,31 @@ function Sidebar() {
             <div className="sidebar__header -flex sidebar__border-b-1">
                 <Avatar src={user.photoURL} />
                 <div className="sidebar__icons -flex">
-                    <IconButton className="sidebar__themetoggle" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
+                    <OverlayTrigger
+                        key="bottom"
+                        placement="bottom"
+                        overlay={
+                            <Tooltip id={`tooltip-bottom`}>
+                                Toggle theme
+                            </Tooltip>
+                        }
+                    >
+                        <IconButton className="sidebar__themetoggle" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                        key="bottom"
+                        placement="bottom"
+                        overlay={
+                            <Tooltip id={`tooltip-bottom`}>
+                                Sign Out
+                            </Tooltip>
+                        }
+                    >
+                        <IconButton>
+                            <ExitToAppIcon onClick={signOutHandler} className="_iconColor" />
+                        </IconButton>
+                    </OverlayTrigger>
 
-                    <IconButton>
-                        <ExitToAppIcon onClick={signOutHandler} className="_iconColor" />
-                    </IconButton>
                 </div>
 
             </div>
@@ -49,7 +71,7 @@ function Sidebar() {
             </div>
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
-                {rooms.map((room)=> (<SidebarChat id={room.id} title={room.data.name} lastMessage="Last message" />)
+                {rooms.map((room) => (<SidebarChat id={room.id} title={room.data.name} lastMessage="Last message" />)
                 )}
             </div>
         </div>
