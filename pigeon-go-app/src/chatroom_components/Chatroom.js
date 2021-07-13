@@ -26,7 +26,7 @@ function Chatroom({ firstPage }) {
             db.collection("rooms").doc(roomId).onSnapshot(snapshot => setRoom(snapshot.data().name))
 
             // db stuff 2  --> here we also have to fetch message from db
-            db.collection('rooms').doc(roomId).collection('message').orderBy("timestamp", "asc").onSnapshot((snapshot) => setMessage(snapshot.docs.map(doc=>({
+            db.collection('rooms/roomId/message').orderBy("timestamp", "asc").onSnapshot((snapshot) => setMessage(snapshot.docs.map(doc=>({
                 id: doc.id,
                 data: doc.data()
             }))));
