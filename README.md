@@ -1,4 +1,22 @@
 # Pigeon_Go
- One to one chat app
+ A chat application where one can send messages to the peers and add chat room to start a new conversation/discussion with Google authentication.
 
- Logo URL: https://i.pinimg.com/600x315/d7/03/e2/d703e2318b558418479bdcf253b48fe8.jpg
+ ## Current features
+ 1. Send and receive chats at realtime.
+ 1. Add chat rooms
+ 1. Google authentication
+
+ ## The technologies used while building this app are as follows
+1. ReactJS + React hooks
+1. Material UI
+1. Firebase's firestore database
+1. React context API
+1. Firebase google authentication
+1. Firebase hosting
+
+## Upcoming features
+1. Sign In with Email and password
+1. Search chats
+1. One to One chats
+1. Responsiveness
+1. Toggle theme

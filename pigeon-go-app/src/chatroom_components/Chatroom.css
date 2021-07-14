@@ -27,8 +27,8 @@
 
 .chatroom__body {
     flex: 1;
+    background-image: url("https://media.istockphoto.com/vectors/abstract-modern-technology-gray-geometric-with-dots-pattern-on-white-vector-id991107368?k=6&m=991107368&s=612x612&w=0&h=7Dd6_FQipBe7QtUXarBk9ITBlxIKuy-tbduwTXP9xAI=");
     /* background-image: url("https://www.crushpixel.com/big-static15/preview4/hand-drawn-speech-bubbles-seamless-2133828.jpg"); */
-    background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX43898477.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

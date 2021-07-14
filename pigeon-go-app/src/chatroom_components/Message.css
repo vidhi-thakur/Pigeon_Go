@@ -7,6 +7,12 @@
     margin: 1rem 0px 0px 1rem;
 }
 
+.message__receiver {
+    background-color: var(--primary-color02);
+    margin-left: auto;
+    margin-inline-end: 1rem;
+}
+
 .font-s {
     font-size: x-small;
 }
