@@ -20,3 +20,5 @@
 1. One to One chats
 1. Responsiveness
 1. Toggle theme
+
+PS. If you like the repo, do give it a star⭐
