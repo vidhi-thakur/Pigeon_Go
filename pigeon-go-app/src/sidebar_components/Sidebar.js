@@ -27,7 +27,7 @@ function Sidebar() {
             data: doc.data()
         }))))
     }, [])
-
+    
     return (
         <div className="sidebar -flex">
             <div className="sidebar__header -flex sidebar__border-b-1">
@@ -54,7 +54,7 @@ function Sidebar() {
                         }
                     >
                         <IconButton>
-                            <ExitToAppIcon onClick={()=>auth.signOut()} className="_iconColor --cursor" />
+                            <ExitToAppIcon onClick={() => auth.signOut()} className="_iconColor --cursor" />
                         </IconButton>
                     </OverlayTrigger>
                 </div>
@@ -66,8 +66,9 @@ function Sidebar() {
             </div>
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
-                {rooms.map((room) => (<SidebarChat key={room.id} id={room.id} title={room.data.name} />)
-                )}
+                {rooms.map((room) => (
+                    <SidebarChat key={room.id} id={room.id} title={room.data.name} />
+                ))}
             </div>
         </div>
     )
