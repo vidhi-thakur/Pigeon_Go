@@ -1,5 +1,3 @@
-git tag <made with ❤️>
-
 # Pigeon_Go
  A chat application where one can send messages to the peers and add chat room to start a new conversation/discussion with Google authentication.
 
