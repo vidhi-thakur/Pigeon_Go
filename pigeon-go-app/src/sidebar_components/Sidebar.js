@@ -28,10 +28,6 @@ function Sidebar() {
         }))))
     }, [])
 
-    const signOutHandler = () => {
-        auth.signOut()
-    }
-
     return (
         <div className="sidebar -flex">
             <div className="sidebar__header -flex sidebar__border-b-1">
@@ -46,7 +42,7 @@ function Sidebar() {
                             </Tooltip>
                         }
                     >
-                        <IconButton className="sidebar__themetoggle" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
+                        <IconButton className="sidebar__themetoggle --cursor" onClick={() => setDarktheme(!darktheme)}>{darktheme ? <Brightness2Icon className="_iconColor" /> : <WbSunnyIcon className="_iconColor" />}</IconButton>
                     </OverlayTrigger>
                     <OverlayTrigger
                         key="bottom1"
@@ -58,7 +54,7 @@ function Sidebar() {
                         }
                     >
                         <IconButton>
-                            <ExitToAppIcon onClick={signOutHandler} className="_iconColor" />
+                            <ExitToAppIcon onClick={()=>auth.signOut()} className="_iconColor --cursor" />
                         </IconButton>
                     </OverlayTrigger>
                 </div>
@@ -70,7 +66,7 @@ function Sidebar() {
             </div>
             <ButtonModal />
             <div className="sidebar__chatContainer -flex">
-                {rooms.map((room) => (<SidebarChat key={room.id} id={room.id} title={room.data.name} lastMessage="Last message" />)
+                {rooms.map((room) => (<SidebarChat key={room.id} id={room.id} title={room.data.name} />)
                 )}
             </div>
         </div>

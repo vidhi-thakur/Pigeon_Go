@@ -33,6 +33,10 @@
     flex: 1;
 }
 
+.--cursor {
+    cursor: pointer;
+}
+
 .sidebar__chatContainer {
     flex-direction: column;
     overflow-y: scroll;

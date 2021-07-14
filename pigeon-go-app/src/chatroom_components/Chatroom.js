@@ -55,7 +55,7 @@ function Chatroom({ firstPage }) {
                     <Avatar src={roomId ? `https://avatars.dicebear.com/api/avataaars/${roomId}.svg` : `${user.photoURL}`} />
                     {!firstPage && <div className="sidebarchat__info">
                         <h6 className="mb-0 sidebarchat__chatRoom">{room}</h6>
-                        <p className="mb-0">Last active...</p>
+                        {message.length ? <p className="mb-0">{Date(message[message.length-1]?.messageTimestamp).toString()}</p> : <></>}
                     </div>}
                 </div>
                 <OverlayTrigger
@@ -68,7 +68,7 @@ function Chatroom({ firstPage }) {
                     }
                 >
                     <IconButton>
-                        <SearchRoundedIcon className="_iconColor" />
+                        <SearchRoundedIcon className="_iconColor --cursor" />
                     </IconButton>
                 </OverlayTrigger>
 

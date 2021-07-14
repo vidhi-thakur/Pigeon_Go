@@ -20,7 +20,7 @@ function Login() {
             <div className="login">
                 <div className="login__container -flex">
                     <img className="login__image" src={logo} alt="logo" />
-                    <Button onClick={signInHandler} className="login__button">Sign In with Google</Button>
+                    <Button onClick={signInHandler} className="login__button --cursor">Sign In with Google</Button>
                 </div>
             </div>
         )
