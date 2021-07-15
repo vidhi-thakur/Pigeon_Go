@@ -39,11 +39,16 @@ function Chatroom({ firstPage }) {
 
         // db stuff 1 (for message) --> here we have to write code to upload message to db
         if(roomId) {
-            db.collection("rooms").doc(roomId).collection("message").add({
-                userName: user.displayName,
-                userInput: messageInput,
-                userTimestamp: firebase.firestore.FieldValue.serverTimestamp()
-            })
+            if(messageInput) {
+                db.collection("rooms").doc(roomId).collection("message").add({
+                    userName: user.displayName,
+                    userInput: messageInput,
+                    userTimestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+            } else {
+                alert("Type a message")
+            }
+            
         }
 
         setMessageInput("")
@@ -52,7 +57,7 @@ function Chatroom({ firstPage }) {
         <div className="chatroom -flex">
             <div className="chatroom__header -flex">
                 <div className="-flex">
-                    <Avatar src={roomId ? `https://avatars.dicebear.com/api/avataaars/${roomId}.svg` : `${user.photoURL}`} />
+                    <Avatar src={roomId ? `https://avatars.dicebear.com/api/avataaars/${roomId}.svg` : `${user.photoURL? user.photoURL: `https://avatars.dicebear.com/api/avataaars/${user.displayName}.svg`}`} />
                     {!firstPage && <div className="sidebarchat__info">
                         <h6 className="mb-0 sidebarchat__chatRoom">{room}</h6>
                         {message.length ? <p className="mb-0">{Date(message[message.length-1]?.messageTimestamp).toString()}</p> : <></>}

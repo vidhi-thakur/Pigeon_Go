@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./Login.css"
 import { Button } from '@material-ui/core';
 import logo from "../images/logo.jpg"
+import { Link, useHistory } from "react-router-dom"
 import { auth, provider } from "../firebase"
 import { useStateValue } from "../StateProvider"
 
@@ -11,10 +12,13 @@ function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const emailSignInHandler = () => {
-        auth.signInWithEmailAndPassword(email, password).then(result => {
+    let history = useHistory()
 
-        })
+    const emailSignInHandler = (e) => {
+        e.preventDefault();
+        auth.signInWithEmailAndPassword(email, password).then(result => {
+            history.push("/")
+        }).catch(error => alert(error.message))
     }
 
     const googleSignInHandler = () => {
@@ -41,6 +45,7 @@ function Login() {
                     <Button onClick={googleSignInHandler} className="login__button login__googleSignIn --cursor">Sign In with Google</Button>
                 </form>
             </div>
+            <small>Don't have an account? <Link to="/register">Sign up.</Link></small>
         </div>
     )
 }

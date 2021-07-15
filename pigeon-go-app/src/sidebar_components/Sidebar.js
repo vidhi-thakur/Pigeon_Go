@@ -31,7 +31,7 @@ function Sidebar() {
     return (
         <div className="sidebar -flex">
             <div className="sidebar__header -flex sidebar__border-b-1">
-                <Avatar src={user.photoURL} />
+                <Avatar src={user.photoURL? user.photoURL: `https://avatars.dicebear.com/api/avataaars/${user.displayName}.svg`} />
                 <div className="sidebar__icons -flex">
                     <OverlayTrigger
                         key="bottom"
