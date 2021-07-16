@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import "./Login.css"
 import { Button } from '@material-ui/core';
 import logo from "../images/logo.jpg"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { auth, provider } from "../firebase"
 import { useStateValue } from "../StateProvider"
+import Signup from './Signup';
 
 function Login() {
 
     const [, dispatch] = useStateValue()
+    const [registerpage, setRegisterpage] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -33,7 +35,7 @@ function Login() {
     return (
         <div className="login -flex">
             <img className="login__image" src={logo} alt="logo" />
-            <div className="login__container -flex">
+            {!registerpage ? <div className="login__container -flex">
                 <h1 className="f-b">Sign In</h1>
                 <form className="-flex login__from">
                     <p className="mb-05 f-b">Email</p>
@@ -44,8 +46,8 @@ function Login() {
                     <small className="t-j mb-3">By signing-in you agree to refrain from defamatory, indecent, offensive, profane, discriminatory, misleading, unlawful or threatening comments.</small>
                     <Button onClick={googleSignInHandler} className="login__button login__googleSignIn --cursor">Sign In with Google</Button>
                 </form>
-            </div>
-            <small>Don't have an account? <Link to="/register">Sign up.</Link></small>
+            </div> : <Signup />}
+            {!registerpage ? <small>Don't have an account? <span className="--cursor c-blue" onClick={() => setRegisterpage(!registerpage)}>Sign up.</span></small> : <small>Already have an account? <span className="--cursor c-blue" onClick={() => setRegisterpage(!registerpage)}>Login.</span></small>}
         </div>
     )
 }

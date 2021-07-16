@@ -5,7 +5,6 @@ import Chatroom from "./chatroom_components/Chatroom"
 import Login from './pages/Login';
 import { useStateValue } from "./StateProvider"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Signup from './pages/Signup';
 import { auth } from "./firebase"
 
 function App() {
@@ -51,18 +50,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <>
-          <Router>
-            <Switch>
-              <Route path="/">
-                <Login />
-              </Route>
-              <Route path="/register">
-                <Signup />
-              </Route>
-            </Switch>
-          </Router>
-        </>
+        <Login />
       )}
     </>
   );
