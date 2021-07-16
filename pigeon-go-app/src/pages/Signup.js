@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./Signup.css"
 import { Button } from '@material-ui/core';
 import { useHistory } from "react-router-dom"
-import { auth } from "../firebase"
+import db, { auth } from "../firebase"
 
 function Signup() {
     const [username, setUsername] = useState("")
