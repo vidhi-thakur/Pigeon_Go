@@ -4,8 +4,10 @@
  ## Current features
  1. Send and receive chats at realtime.
  1. Add chat rooms
- 1. Google authentication
-
+ 1. Authentication
+    1. Sign In and sign out with Email and password
+    1. Google authentication
+ 
  ## The technologies used while building this app are as follows
 1. ReactJS + React hooks
 1. Material UI
@@ -15,9 +17,8 @@
 1. Firebase hosting
 
 ## Upcoming features
-1. Sign In with Email and password
-1. Search chats
 1. One to One chats
+1. Search chats
 1. Responsiveness
 1. Toggle theme
 
